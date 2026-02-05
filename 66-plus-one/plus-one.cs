@@ -1,0 +1,21 @@
+public class Solution {
+    public int[] PlusOne(int[] digits) {
+        for(int i = digits.Length - 1; i >= 0; i--)
+        {
+            if(digits[i] < 9)
+            {
+                digits[i] = digits[i] + 1;
+                return digits;
+            }
+            else
+            {
+                digits[i] = 0;
+            }
+        }
+        // kommer hit i ett specifikt fall (999)
+        // alla element i en array sätts automatiskt till 0
+        int[] newArray = new int[digits.Length +1];
+        newArray[0] = 1;
+        return newArray;
+    }
+}
